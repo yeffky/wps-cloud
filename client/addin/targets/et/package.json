@@ -1,0 +1,13 @@
+{
+	"name": "wps-personal-cloud-et",
+	"version": "0.1.0",
+	"private": true,
+	"type": "module",
+	"addonType": "et",
+	"scripts": {
+		"dev": "vite --port 3890",
+		"debug": "wpsjs debug",
+		"build": "vite build",
+		"publish": "wpsjs publish"
+	}
+}

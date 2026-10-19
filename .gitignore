@@ -1,0 +1,10 @@
+node_modules/
+data/
+.env
+*.log
+client/dist/
+client/addin/dist/
+client/addin/targets/*/dist/
+client/addin/wps-addon-build/
+client/addin/wps-addon-publish/
+client/addin/.debugTemp/

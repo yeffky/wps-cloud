@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>个人云盘</title>
+  <link rel="stylesheet" href="panel.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>个人云盘</h1>
+      <p>在 WPS 本地保存后自动同步到你的服务器</p>
+    </header>
+    <section class="card">
+      <h2>连接设置</h2>
+      <label>服务器地址<input id="apiBase" type="url" placeholder="https://cloud.example.com"></label>
+      <label>访问令牌<input id="token" type="password" autocomplete="off" placeholder="Bearer token"></label>
+      <label>云端目录 ID<input id="parentId" type="text" value="root"></label>
+      <label class="inline"><input id="autoSync" type="checkbox" checked> 保存后自动同步 WPS 文档</label>
+      <label class="inline"><input id="autoCompare" type="checkbox"> 空闲后自动保存并同步云端差异</label>
+      <label>空闲等待时间（秒）<input id="autoSaveDelay" type="number" min="1" max="60" step="1" value="5"></label>
+      <p class="help">停止编辑达到设定时间后，先保存到原本地路径，再比较本地与云端内容；仅有差异时上传。另保留每 60 秒的差异检查。需先建立云端关联。</p>
+      <div class="actions"><button id="save">保存设置</button><button id="connect" class="secondary">测试连接</button></div>
+      <div id="connection" class="muted" role="status"></div>
+    </section>
+    <section class="card">
+      <div class="section-heading"><h2>云端文件</h2><button id="refresh" class="secondary small">刷新</button></div>
+      <div id="files" class="muted">配置服务器后刷新文件列表。</div>
+    </section>
+    <footer><span id="syncStatus">尚未同步</span><span id="pendingStatus">上传队列：0</span><button id="retry" class="secondary small">重试上传队列</button><span>只同步本地文件，不会占用 WPS 云空间</span></footer>
+  </main>
+  <script src="panel.js"></script>
+</body>
+</html>

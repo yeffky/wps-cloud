@@ -1,0 +1,12 @@
+{
+  "name": "wps-personal-cloud",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "server": "node server/index.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

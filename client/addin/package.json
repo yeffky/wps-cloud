@@ -1,0 +1,21 @@
+{
+	"name": "wps-personal-cloud-addin",
+	"version": "0.1.0",
+	"private": true,
+	"type": "module",
+	"addonType": "wps",
+	"scripts": {
+		"dev": "vite --port 3890",
+		"debug": "wpsjs debug",
+		"debug:et": "npm --prefix targets/et run debug",
+		"debug:wpp": "npm --prefix targets/wpp run debug",
+		"build": "vite build",
+		"build:et": "npm --prefix targets/et run build",
+		"build:wpp": "npm --prefix targets/wpp run build",
+		"publish": "wpsjs publish"
+	},
+	"devDependencies": {
+		"vite": "^5.3.1",
+		"wpsjs": "^2.2.3"
+	}
+}

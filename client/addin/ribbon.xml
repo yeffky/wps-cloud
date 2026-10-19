@@ -1,0 +1,11 @@
+<customUI xmlns="http://schemas.microsoft.com/office/2006/01/customui" onLoad="OnAddInLoad">
+  <ribbon startFromScratch="false">
+    <tabs>
+      <tab id="WpsPersonalCloudTab" label="个人云盘">
+        <group id="WpsPersonalCloudGroup" label="自托管同步">
+          <button id="WpsPersonalCloudPanel" label="云盘与设置" size="large" onAction="OpenCloudPane" />
+        </group>
+      </tab>
+    </tabs>
+  </ribbon>
+</customUI>
