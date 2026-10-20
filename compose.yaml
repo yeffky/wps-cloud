@@ -1,0 +1,25 @@
+services:
+  wps-cloud-api:
+    image: node:22-alpine
+    container_name: wps-cloud-api
+    restart: unless-stopped
+    user: "1000:1000"
+    working_dir: /app
+    command: ["node", "server/index.mjs"]
+    env_file:
+      - .env
+    environment:
+      WPS_CLOUD_HOST: "0.0.0.0"
+      WPS_CLOUD_PORT: "8787"
+      WPS_CLOUD_DATA_DIR: /data
+    volumes:
+      - ./server:/app/server:ro,Z
+      - ./data:/data:Z
+    ports:
+      - "127.0.0.1:8787:8787"
+    networks:
+      - wps-cloud
+
+networks:
+  wps-cloud:
+    name: wps-cloud-net
